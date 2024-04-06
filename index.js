@@ -51,5 +51,12 @@ inquirer
     // create markdown file and log results
   ])
   .then((response) => {
-    console.log("test");
+    const readmeContent = generateMarkdown(response);
+    fs.writeFile("readMe.md", readmeContent, (err) => {
+      if (err) {
+        console.error("error generating file: ", err);
+      } else {
+        console.log("Saved File");
+      }
+    });
   });
