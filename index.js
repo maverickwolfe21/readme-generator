@@ -8,22 +8,22 @@ inquirer
   .prompt([
     {
       type: "input",
-      message: "Enter project title",
+      message: "Enter project title:",
       name: "title",
     },
     {
       type: "input",
-      message: "Enter project description",
+      message: "Enter project description:",
       name: "description",
     },
     {
       type: "input",
-      message: "Enter installation steps",
+      message: "Enter installation steps:",
       name: "installation",
     },
     {
       type: "input",
-      message: "Enter usage instructions",
+      message: "Enter usage instructions:",
       name: "usage",
     },
     {
@@ -34,17 +34,17 @@ inquirer
     },
     {
       type: "input",
-      message: "Enter recommended contributions",
+      message: "Enter recommended contributions:",
       name: "contributing",
     },
     {
       type: "input",
-      message: "Enter project tests",
+      message: "Enter project tests:",
       name: "tests",
     },
     {
       type: "input",
-      message: "Enter contact information",
+      message: "Enter contact information:",
       name: "contact",
     },
 
@@ -52,7 +52,7 @@ inquirer
   ])
   .then((response) => {
     const readmeContent = generateMarkdown(response);
-    fs.writeFile("readMe.md", readmeContent, (err) => {
+    fs.writeFile("README.md", readmeContent, (err) => {
       if (err) {
         console.error("error generating file: ", err);
       } else {
